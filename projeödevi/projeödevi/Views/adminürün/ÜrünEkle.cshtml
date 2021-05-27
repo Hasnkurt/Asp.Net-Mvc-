@@ -1,0 +1,56 @@
+﻿@model projeödevi.Models.Entity.ürünler
+
+
+@{
+    ViewBag.Title = "ÜrünEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+    @using(Html.BeginForm("ÜrünEkle","adminürün",FormMethod.Post,new { enctype="multipart/form-data"}))
+    {
+<form method="post" class="form-group">
+  
+
+        <div>
+            <label>Ürün Adı</label>
+            <input type="text" class="form-control" name="ürünadi" />
+        </div>
+
+    <div>
+      <label>Ürün Resmi</label>
+        <input type="file"name="ürünresmi" />
+     
+
+    </div>
+   
+
+    <div>
+        <label>Ürün Markası</label>
+        @Html.DropDownListFor(m => m.markalar.markaid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Ürün Özellikleri</label>
+        <input type="text" class="form-control" name="ürünözellikleri" />
+    </div>
+    <div>
+        <label>Kategori Seçiniz</label>
+        @Html.DropDownListFor(m => m.kategori.kategoriid, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Fiyati</label>
+        <input type="text" class="form-control" name="fiyat"  />
+    </div>
+    <div>
+        <label>Stok Adeti </label>
+        <input type="text" class="form-control" name="stok" />
+    </div>
+
+
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info"> Ürün Ekle</button>
+    </div>
+</form>
+  }
+
+

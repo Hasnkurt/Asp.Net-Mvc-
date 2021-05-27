@@ -1,0 +1,19 @@
+﻿<ul class="nav pull-right>
+    @if (Request.IsAuthenticated)
+    {
+        if (this.User.IsInRole("User"))
+        {
+            <ul class="nav navbar-nav navbar-right" style="text-align:center">
+
+
+             
+                <li><a href="/üye/Logout"><span1 class="fas fa-user"></span1> Çıkış yap</a></li>
+
+             
+                @Html.Action("SepetÖzet", "Cart")
+
+
+            </ul>
+        }
+    }
+</ul>

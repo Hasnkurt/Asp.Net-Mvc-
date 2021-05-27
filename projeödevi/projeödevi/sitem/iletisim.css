@@ -1,0 +1,188 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+
+}
+
+
+body{
+
+    background-color:#dbdbdb;
+    font-family: 'Oxygen', sans-serif;
+    background: url(img/walpa.jpg);
+    background-size: cover;
+    
+    position:sticky;
+    top: 0;
+    z-index: 1; 
+
+    font-size: 14px;
+ 
+}
+
+.contact{
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+   
+
+
+}
+.contact .content{
+
+    max-width: 800px;
+    text-align: center;
+}
+.contact .content h2{
+
+    font-size: 30px;
+    font-weight: 600;
+    color:#111;
+    opacity: 0.7;
+    
+    
+
+}
+.contact .content p{
+
+    font-size: 22px;
+    font-weight: 400;
+    color:#fff;
+    font-family: 'Oxygen', sans-serif;
+    opacity: 0.7;
+    
+    
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: top 30px;
+
+}
+
+.container .contactInfo
+
+{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.container .contactInfo .box1
+{
+
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+
+}
+.container .contactInfo .box1 .icon{
+
+    min-width: 60px;
+    height: 60px;
+    background:#fff;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+
+}
+.container .contactInfo .box1 .text
+{
+
+    display: flex;
+    margin-left: 20px;
+    font-size:16px;
+    color:black;
+    flex-direction: column;
+    font-weight: 300;
+
+}
+.container .contactInfo .box1 .text h3
+{
+    font-weight: 500;
+    color: #00bcd4;
+
+
+}
+.contactForm{
+
+    width: 40%;
+    padding: 40px;
+    background:#fff;
+
+}
+.contactForm h2{
+    font: size 30px;
+    color:#333;
+    font-weight: 500;
+    
+
+
+}
+.contactForm .İnputBox{
+position: relative;
+width: 100%;
+margin-top: 10px;
+
+
+}
+
+
+.contactForm .İnputBox input,
+.contactForm .İnputBox textarea
+{
+
+width: 100%;
+padding: 5px 0;
+font-size: 16px;
+margin: 10px 0;
+border:none;
+border-bottom: 1px solid #333;
+outline: none;
+resize: none;
+
+}
+.contactForm .İnputBox span{
+
+    position:absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color:#666;
+
+}
+.contactForm .İnputBox input:focus ~ span,
+.contactForm .İnputBox input:valid ~ span,
+.contactForm .İnputBox textarea:focus ~ span,
+.contactForm .İnputBox textarea:valid ~ span
+{
+    color: #e91e63;
+    font-size: 12px;
+    transform: translateY(-20px);
+
+}
+.contactForm .İnputBox input[type="submit"]
+{
+
+    width: 100px;
+  
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    
+}
+

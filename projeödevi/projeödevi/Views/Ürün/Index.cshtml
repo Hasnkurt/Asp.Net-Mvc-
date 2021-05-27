@@ -1,0 +1,131 @@
+﻿@model projeödevi.Models.Entity.ürünler
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .col-md-12 h3 {
+        text-align: center;
+    }
+
+    .thumbnail button {
+        width: 200px;
+    }
+
+    .sekmeler li a {
+        color: black;
+    }
+
+    .col-md-12 span {
+        font-size: 20px;
+    }
+
+    .col-md-12 h4 span {
+        font-weight: 900;
+    }
+
+    .list-group .list-group-item:hover {
+        background-color: coral;
+        opacity: 0.9;
+        text-align: center;
+        transition: 0.2s;
+    }
+</style>
+<div class="row">
+    <div class="col-md-3">
+
+        <!--Kategori Listes-->
+        @Html.Action("Partial1", "Home")
+
+
+        <div class="row">
+            <div class="col-sm-6 col-md-12">
+                <h3>Populer Ürünler</h3>
+                <div class="thumbnail">
+                    <img src="../sitem/img/piyano9.jpg" alt="...">
+                    <div class="caption" style="text-align: center;">
+                        <h3>Yamaha B2 Akustik Duvar Piyanosu (Parlak Ceviz) Model: B2EPW </h3>
+                        <p>B serisi piyanolar, tüm Yamaha enstrümanlarında olduğu gibi çalmanın ve sahip olmanın büyük keyif verdiği, geleneksel işçilik ve sanat ile teknolojinin birleştiği doğal güzelliğe sahip eşsiz piyanolardır.</p>
+
+                        <form action="#" method="post">
+                            <p><a href="#" class="btn btn-primary" style="background-color:tomato;" role="button">Sepete Ekle</a> <a href="#" class="btn btn-default" style="background-color: tomato;" role="button">Ürüne Git</a></p>
+                        </form>
+
+
+                        <button class="btn fiyatbuton" style="font-size: 20px; background-color:tomato;">500TL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="col-md-9">
+        <!--ürün listesi-->
+        <div class="sekmeler">
+            <!--ÜRÜN GEÇİŞLERİMİN YAPTIGI SEKMELER-->
+            <ol class="breadcrumb">
+                <li><a href="#"> <i class="fas fa-home"></i>AnaSayfa</a></li>
+
+                <li><a href="akustikduvar.html">ÜrünDetay</a></li>
+
+            </ol>
+
+         
+
+            <ul class="nav nav-tabs">
+
+                <li><a data-toggle="tab" href="#menu1">Ürün Açıklaması</a></li>
+                <li><a data-toggle="tab" href="#menu2">Taksit Seçeneklerimiz</a></li>
+                <li><a data-toggle="tab" href="#menu3">Yorumlarınız</a></li>
+            </ul>
+
+            <div class="tab-content">
+
+                <div id="menu1" class="tab-pane fade">
+
+                    <h3>Yamaha B2 Akustik Duvar Piyanosu (Parlak Ceviz)</h3>
+                    <p>B serisi piyanolar, tüm Yamaha enstrümanlarında olduğu gibi çalmanın ve sahip olmanın büyük keyif verdiği, geleneksel işçilik ve sanat ile teknolojinin birleştiği doğal güzelliğe sahip eşsiz piyanolardır.</p>
+                    <p>Tüm Yamaha standartlarını uygun fiyatıyla taşıyan b1, Yamaha sahibi olmanın tüm ayrıcalıklarını size yaşatmayı ilke edinmiş etkileyici performanslarla tanışmanızı sağlayacak.</p>
+                    <h3>Kaliteli malzeme, kaliteli ses...</h3>
+                    <p>Ağaç katmanlar üst kalite materyal ile üretilmiştir. Yüksek kalitede ses dönüşünü sağlayan ağaç yapısının yanı sıra hammer kalitesi ile tuş hassasiyeti üst seviyededir. </p>
+
+                    <h3>Tasarım</h3>
+                    <p>Yamaha B Serisi piyanolar yükselik, genişlik ve derinlik anlamında avantaj sunmaktadır. B1 ve B2 boast slender profilleri sayesinde çok daha küçük alanlarda kullanıma uygundur. Boyutsal avantajlarının yanı sıra güçlü tonları ve yüksek kalitede malzemesi ile de son derece güven vericidir.</p>
+                    <h3>Teknik Özellikler</h3>
+                    <ul>
+                        <li>Kaplama: Parlak Ceviz</li>
+                        <li>Genişlik: 150 cm</li>
+                        <li>Yükseklik: 113 cm</li>
+                        <li>Derinlik: 54 cm</li>
+                        <li>Ağırlık: 203 kg</li>
+                        <li>Tuş Sayısı: 88</li>
+                        <li>Beyaz Tuşlar: Acrylic Resin</li>
+                        <li>Siyah Tuşlar: Phenolic Resin ile ağaç boyama
+                        <li>Pedal Tipi: Damper, Muffler, Soft</li>
+                        <li>Gövde Tipi : V-Pro Döküm</li>
+                    </ul>
+                    <hr>
+                </div>
+
+                <div id="menu2" class="tab-pane fade">
+
+                    <img src="../sitem/img/taksit.png">
+
+                </div>
+
+                <div id="menu3" class="tab-pane fade">
+                    <h3>Yorumlarınız</h3>
+                    Yorumlarınızı Bildirin Nasıl Buldunuz Bizleri ?
+                    <p> Öneri Ve Şikayetlerinizi İletişim Menüsüne Geçerek Bildirin. </p>
+                    <hr>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

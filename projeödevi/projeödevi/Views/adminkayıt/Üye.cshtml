@@ -1,0 +1,36 @@
+﻿@using projeödevi.Models.Entity
+@model List<adminlogin>
+@{
+    ViewBag.Title = "Üye";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px;">
+<tr>
+    <th> Üye ID</th>
+    <th>Üye Mail</th>
+    
+  
+    <th>Güncelle</th>
+</tr>
+
+
+<tbody>
+    @foreach (var ayr in Model)
+    {
+    <tr>
+        <td>@ayr.id</td>
+        <td>@ayr.ad</td>
+
+
+
+        <td><a href="/adminkayıt/ÜyeGetir/@ayr.id" class="btn btn-success">DETAY</a></td>
+
+    </tr>
+    }
+</tbody>
+
+    </table>
+
+
+

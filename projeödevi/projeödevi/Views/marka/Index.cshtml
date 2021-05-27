@@ -1,0 +1,31 @@
+﻿@using projeödevi.Models.Entity
+@model List<markalar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+ 
+
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>Marka Id</th>
+        <th>Marka Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+        @foreach(var mrk in Model)
+            {
+        <tr>
+            <td>@mrk.markaid</td>
+        
+            <td>@mrk.markaad</td>
+            <td><a href="/marka/SIL/@mrk.markaid" class="btn btn-danger">SİL</a></td>
+            <td><a href="/marka/MarkaGetir/@mrk.markaid" class="btn btn-success">GÜNCELLE</a></td>
+        </tr>
+            }
+    </tbody>
+
+    </table>
+<a href="/marka/YeniMarka/"class="btn btn-primary">Yeni Marka Ekle</a>

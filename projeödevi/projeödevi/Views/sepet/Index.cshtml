@@ -1,0 +1,225 @@
+﻿@model projeödevi.Models.Entity.ürünler
+
+
+
+@{
+    ViewBag.Title = "ÜrünDetay";
+    Layout = "~/Views/Shared/_DetayLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+
+
+        body {
+            font-family: 'Roboto',sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        i {
+            margin-right: 10px;
+        }
+
+        input:focus,
+        button:focus,
+        .form-control:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        form-control:disabled, .form-control[readonly] {
+            background-color: #fff;
+        }
+
+        .table tr,
+        .table tr td {
+            vertical-align: middle;
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+        }
+
+            .button-container .form-control {
+                max-width: 80px;
+                text-align: ceneter;
+                display: inline-block;
+                margin: 0px 5px;
+            }
+
+        #myTable .form-control {
+            width: auto;
+            display: inline-block;
+        }
+
+        .cart-qty-plus,
+        .cart-qty-minus {
+            width: 38px;
+            height: 38px;
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            border-radius: 25rem;
+        }
+
+            .cart-qty-plus:hover,
+            .cart-qty-minus:hover {
+                background-color: #5161ce;
+                color: #fff;
+            }
+
+        .img-prdct {
+            width: 50px;
+            height: 50px;
+            background-color: #5161ce;
+            border-radius: 4px;
+        }
+
+            .img-prdct img {
+                width: 100%;
+            }
+    </style>
+    <meta charset="UTF-8">
+    <title>Sepet</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,
+    minumum-scale=1.0">
+
+    <link rel="stylesheet" href="~/sitem/sepet.css">
+
+
+</head>
+
+
+<body>
+
+    <div class="container-fluid mt-5">
+        <h2 class="mb-5 text-center">Sepetim</h2>
+
+        <div class="table-responsive">
+            <table id="myTable" class="table">
+                <thead>
+                    <tr>
+                        <th>Ürün</th>
+                        <th>İsim</th>
+                        <th>Adet</th>
+                        <th>Fiyat</th>
+
+                        <th class="text-right>
+                            <span id="amount"
+                                  class="amount">Miktar</span>
+
+                        <th class="text-right>
+                            <span id="amount"
+                                  class="amount"></span>
+
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+
+                    <tr>
+                        <td>
+                            <div class="product-img">
+                                <div class="img-prdct">
+                                    <img src="@Model.ürünresmi" style="width: 70px; height: 70px;" alt="...">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <p>@Model.ürünadi</p>
+
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" value="1" max="20" min="1" placeholder="Adet Girin" id="txt1" onchange="sum();" />
+                        </td>
+                        <td>
+                            <input type="text" name="fiyat"
+                                   value="@Model.fiyat" class="
+                                form-control" id="txt2"
+                                   disabled>
+
+                        </td>
+
+                        <td align="left">
+
+                            <input type="text" class="form-control" id="txt4" readonly />
+                            TL
+
+
+                        </td>
+                        <td align="right">
+
+                            <button type="submit" class="btn btn-danger">SİL</button>
+                 
+
+                        </td>
+
+                    </tr>
+
+
+
+
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="4"></td>
+
+                        <td align="right" style="22px">
+                            <strong>
+                                Toplam Tutar
+                                <input type="text" name="toplamtutar" class="form-control" id="txt3" readonly />
+                                TL
+                            </strong>
+                        </td>
+
+                    </tr>
+
+
+                </tfoot>
+
+            </table>
+        </div>
+        <td align="right">
+
+            <button type="submit" class="btn btn-danger">Siparişi Tamamla</button>
+
+
+        </td>
+    </div>
+  
+
+    <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootsrap/4.3.1/js/bootsrap.min.js"></script>
+
+
+
+
+    <script>
+        function sum() {
+
+            var sayi1 = document.getElementById('txt1').value;
+            var sayi2 = document.getElementById('txt2').value;
+            var sonuc = parseInt(sayi1) * parseInt(sayi2);
+            if (!isNaN(sonuc)) {
+                document.getElementById('txt3').value = sonuc;
+                document.getElementById('txt4').value = sonuc;
+            }
+        }
+
+
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,79 @@
+﻿@model projeödevi.Models.Entity.Cart
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container>
+
+    <div class="row">
+        <div class="span12">
+            <ul class="breadcrumb">
+                <li><a href="/Home/Home">Anasayfa</a> <span class="divider">/</span></li>
+                <li class="active">Sepet</li>
+            </ul>
+            <div class="well well-small">
+                @if (Model.Cartlines.Count > 0)
+                {
+
+
+
+                    <table class="table table-bordered table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Resim</th>
+                                <th>Adı</th>
+                                <th>Açıklama  </th>
+                                <th>Adet</th>
+                                <th>Fiyat</th>
+                                <th>SİL</th>
+                              
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Cartlines)
+                            {
+                            <tr>
+                                <td><img width="100" src="@item.Ürünler.ürünresmi" alt=""></td>
+                                <td>@item.Ürünler.ürünadi</td>
+                                <td>@item.Ürünler.kategori.kategoriad  <p>Ürünleri</p></td>
+
+
+                                <td>@item.adet </td>
+                                <td>@item.Ürünler.fiyat ₺</td>
+
+                             
+                                <td>
+                                    <a href="/Cart/ÜrünSil/@item.Ürünler.ürünid" class="btn btn-default" role="button"><span1 class="fas fa-shopping-cart"></span1>Çıkart</a>
+                                </td>
+                            </tr>
+                            }
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th class="label label-primary" style="display:block; color:white;">Toplam Tutar : @Model.Total().ToString("c")</th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                    </table><br>}
+                else
+                {
+                    <div class="alert alert-warning">
+                        <p>
+                            Sepetinizde Ürün Bulunmamaktadır...
+                        </p>
+                    </div>
+                }
+
+                <a href="/Home/Home" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Alışverişe Devam Et  </a>
+                <a href="/üye/login" class="shopBtn btn-large pull-right">Sipariş Ver <span class="icon-arrow-right"></span></a>
+
+            </div>
+        </div>
+    </div>
+</div>

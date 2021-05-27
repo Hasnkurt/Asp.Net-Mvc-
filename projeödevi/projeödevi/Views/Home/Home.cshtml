@@ -1,0 +1,139 @@
+﻿
+@{
+
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        AnaSayfa
+    </title>
+    <style>
+        .col-md-12 h3 {
+            text-align: center;
+        }
+
+        .sekmeler li a {
+            color: black;
+        }
+
+        .col-sm-6 .btn:hover {
+            background-color: coral;
+            transition: 0.2s;
+        }
+
+        .list-group .list-group-item:hover {
+            background-color: coral;
+            opacity: 0.9;
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        .üründetay1 {
+            text-align: center;
+        }
+
+            .üründetay1 .fiyat {
+                text-decoration: none;
+                color: black;
+                font-size: 15px;
+            }
+
+
+        .thumbnail button {
+            width: 200px;
+        }
+    </style>
+
+    <!-- Bootstrap -->
+    <link href="../sitem/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../sitem/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="~/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+
+
+<div class="row">
+
+    <div class="col-md-3">
+      
+
+
+        @Html.Action("Partial1", "Home")
+
+        <!--Kategori Listesi-->
+        <!--Populer Ürünler Listem-->
+        <div class="row">
+            <div class="col-sm-6 col-md-12">
+                <h3>Populer Ürünler</h3>
+                <div class="thumbnail">
+                    <img src="~/sitem/img/piyano9.jpg" alt="...">
+                    <div class="caption" style="text-align: center;">
+                        <h3>Yamaha B2 Akustik Duvar Piyanosu (Parlak Ceviz) Model: B2EPW </h3>
+                        <p>B serisi piyanolar, tüm Yamaha enstrümanlarında olduğu gibi çalmanın ve sahip olmanın büyük keyif verdiği, geleneksel işçilik ve sanat ile teknolojinin birleştiği doğal güzelliğe sahip eşsiz piyanolardır.</p>
+                        <p><a href="#" class="btn btn-primary" style="background-color:tomato;" role="button">Sepete Ekle</a> <a href="#" class="btn btn-default" style="background-color: tomato;" role="button">Ürüne Git</a></p>
+                        <button class="btn fiyatbuton" style="font-size: 20px; background-color:tomato;">500 ₺</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!--Populer Ürünler Listem Bitiş-->
+
+
+    </div>
+
+
+
+    <div class="col-md-9">
+        <!--ürün listesi-->
+        <div class="sekmeler">
+            <!--ÜRÜN GEÇİŞLERİMİN YAPTIGI SEKMELER-->
+            <ol class="breadcrumb">
+                <li><a href="#"> <i class="fas fa-home"></i>AnaSayfa</a></li>
+     
+               
+                    <li><a href="akustikduvar.html">Ürünler</a></li>
+                    
+                </ol>
+
+        </div>  <!--ÜRÜN GEÇİŞLERİMİN YAPTIGI SEKMELER BİTİŞ YERİ -->
+        <!---Ürünler-->
+        @Html.Action("Ürünler", "Home")
+
+        <div class="col-sm-6 col-md-4">
+
+            <!---Ürün Listesinın aldığı Partial Bölümü -->
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>

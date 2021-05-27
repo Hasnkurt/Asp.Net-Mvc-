@@ -1,0 +1,336 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Admin Panel Yöneyim Sayfası</title>
+    <style>
+
+
+        body {
+            background-color: white;
+            font-size: 15px;
+            font-family: 'Oxygen', sans-serif;
+        }
+
+
+
+        .thumbnail button {
+            width: 200px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .footer {
+            background-color: black;
+            padding: 20px 0;
+        }
+
+
+        .footer-col ul {
+            list-style: none;
+            width: 100%;
+        }
+
+        .footer-col {
+            width: 25%;
+            padding: 0 15px;
+        }
+
+        .footer .container {
+            margin: auto;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            color: white;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+            font-weight: 500;
+            position: relative;
+            text-align: center;
+        }
+
+            .footer-col h4::before {
+                content: '';
+                position: absolute;
+                left: auto;
+                bottom: -10px;
+                background-color: #E91e63;
+                height: 2px;
+                box-sizing: border-box;
+                width: 65%;
+            }
+
+        .footer-col ul li:not(:last-child) {
+            margin-bottom: 9px;
+        }
+
+        .footer-col ul li a {
+            font-size: 17px;
+            text-transform: capitalize;
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            color: #bbbbbb;
+            display: block;
+            transition: all 0.6s ease;
+            text-align: center;
+        }
+
+            .footer-col ul li a:hover {
+                color: #ffffff;
+                padding-left: 8px;
+            }
+
+        .footer-col .social-links a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255,255,255,0.2);
+            margin: 0 10px 10px 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: white;
+            transition: all 0.5s ease;
+        }
+
+            .footer-col .social-links a:hover {
+                color: #24262b;
+                background-color: white;
+            }
+
+        .social-links {
+            text-align: center;
+        }
+
+        .sekmeler li a {
+            color: black;
+        }
+
+        .col-sm-6 .btn:hover {
+            background-color: coral;
+            transition: 0.2s;
+        }
+
+        .list-group .list-group-item:hover {
+            background-color: coral;
+            opacity: 0.9;
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        .üründetay1 {
+            text-align: center;
+        }
+
+            .üründetay1 .fiyat {
+                text-decoration: none;
+                color: black;
+                font-size: 15px;
+            }
+    </style>
+    <!-- Bootstrap -->
+    <link href="../sitem/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../sitem/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="" ~ /style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+
+
+</head>
+<body>
+    <div class="container">
+
+        @Html.Action("Sliderüstt", "Home")
+    </div>
+    <div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="~/Home/Home">AnaSayfa <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Mağazalar</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ÜRÜNLER <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Piyano</a></li>
+                            <li><a href="#">Keman</a></li>
+                            <li><a href="#">Gitar</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="#">Mağazalar</a></li>
+                    <li><a href="#">İletişim</a></li>
+
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Ara">
+                    </div>
+                    <button type="submit" class="btn btn-default">Ara</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+
+
+                    <li><a href="~/üye/ÜyeEkle"><span1 class="fas fa-user"></span1> Üye Ol</a></li>
+                    <li><a href="~/üye/login"><span1 class="fas fa-sign-in-alt"></span1> Giriş Yap</a></li>
+                    @Html.Action("SepetÖzet", "Cart")
+                   
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+
+    </nav>
+
+
+
+    <div class="col-md-3">
+
+
+
+        @Html.Action("Partial1", "Home")
+
+        <!--Kategori Listesi-->
+        <!--Populer Ürünler Listem-->
+        <div class="row">
+            <div class="col-sm-6 col-md-12">
+                <h3>Populer Ürünler</h3>
+                <div class="thumbnail">
+                    <img src="~/sitem/img/piyano9.jpg" alt="...">
+                    <div class="caption" style="text-align: center;">
+                        <h3>Yamaha B2 Akustik Duvar Piyanosu (Parlak Ceviz) Model: B2EPW </h3>
+                        <p>B serisi piyanolar, tüm Yamaha enstrümanlarında olduğu gibi çalmanın ve sahip olmanın büyük keyif verdiği, geleneksel işçilik ve sanat ile teknolojinin birleştiği doğal güzelliğe sahip eşsiz piyanolardır.</p>
+                        <p><a href="#" class="btn btn-primary" style="background-color:tomato;" role="button">Sepete Ekle</a> <a href="#" class="btn btn-default" style="background-color: tomato;" role="button">Ürüne Git</a></p>
+                        <button class="btn fiyatbuton" style="font-size: 20px; background-color:tomato;">500TL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!--Populer Ürünler Listem Bitiş-->
+
+
+    </div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+
+        </main>
+
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>MÜŞTERİ HİZMETLERİ</h4>
+                        <ul>
+                            <li><a href="#">Bize Ulaşın </a></li>
+                            <li><a href="#">Site Kullanım koşulları</a></li>
+                            <li><a href="#">Gizlilik Politikası</a></li>
+                            <li><a href="#">Banka Hesaplarımız<a></li>
+
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>BİLGİLENDİRME</h4>
+                        <ul>
+                            <li><a href="#">Kargo ve Teslimat </a></li>
+                            <li><a href="#">Garantive İade Koşulları</a></li>
+                            <li><a href="#">Mesafeli satış koşulları</a></li>
+                            <li><a href="#">Tüketici Kanunu</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>KURUMSAL</h4>
+                        <ul>
+                            <li><a href="#">Hakkımızda</a></li>
+                            <li><a href="#">Shoowroom</a></li>
+                            <li><a href="#">Markalarımız</a></li>
+
+                    </div>
+                    <div class="footer-col">
+                        <h4>Bizi Takip Edin</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="~/web/startbootstrap-sb-admin-gh-pages/dist/js/scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+﻿@model projeödevi.Models.Entity.sliderüst
+@{
+    ViewBag.Title = "Slider";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("Slider", "Slider", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<form method="post" class="form-group">
+    <div>
+        <label>Ürün Resmi</label>
+        <input type="file" name="slider" />
+
+
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Slider Ekle</button>
+    </div>
+
+</form>
+}

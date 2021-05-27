@@ -1,0 +1,68 @@
+﻿@model projeödevi.Models.Entity.ürünler
+@{
+    ViewBag.Title = "ÜrünGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+    @using (Html.BeginForm("GUNCELLE", "adminürün", FormMethod.Post,new { enctype ="multipart/form-data"}))
+    {
+
+<div class="form-group">
+
+
+
+
+
+    @Html.LabelFor(m => m.ürünid)
+    @Html.TextBoxFor(m => m.ürünid, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(m => m.ürünresmi)
+    @Html.TextBoxFor(m => m.ürünresmi, new { @class = "form-control" })
+    <input type="file" name="ürünresmi" />
+
+    <br />
+
+    @Html.LabelFor(m => m.ürünadi)
+    @Html.TextBoxFor(m => m.ürünadi, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(m => m.ürünmarka)
+    @Html.TextBoxFor(m => m.ürünmarka, new { @class = "form-control" })
+
+
+    <br />
+
+    @Html.LabelFor(m => m.ürünözellikleri)
+    @Html.TextBoxFor(m => m.ürünözellikleri, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(m => m.ürünkategori)
+    @Html.DropDownListFor(m => m.kategori.kategoriid, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    @*@Html.TextBoxFor(m => m.ürünkategori, new { @class = "form-control" })*@
+
+    <br />
+
+    @Html.LabelFor(m => m.fiyat)
+    @Html.TextBoxFor(m => m.fiyat, new { @class = "form-control" })
+
+
+    <br />
+
+    @Html.LabelFor(m => m.stok)
+    @Html.TextBoxFor(m => m.stok, new { @class = "form-control" })
+
+
+
+
+
+</div>
+
+    <div>
+        <button class="btn btn-warning">Ürün Güncelle</button>
+    </div>
+}
+
+

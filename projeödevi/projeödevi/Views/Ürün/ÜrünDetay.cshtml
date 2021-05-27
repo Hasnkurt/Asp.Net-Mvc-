@@ -1,0 +1,96 @@
+﻿@model projeödevi.Models.Entity.ürünler
+
+
+
+@{
+    ViewBag.Title = "ÜrünDetay";
+    Layout = "~/Views/Shared/_DetayLayout.cshtml";
+}
+
+<div class="container">
+    <div class="col-md-9">
+        <!--ürün listesi-->
+        <div class="sekmeler">
+            <!--ÜRÜN GEÇİŞLERİMİN YAPTIGI SEKMELER-->
+            <ol class="breadcrumb">
+                <li><a href="#"> <i class="fas fa-home"></i>AnaSayfa</a></li>
+
+                <li><a href="#">ÜrünDetay</a></li>
+
+            </ol>
+
+            <div class="con-bot">
+            
+
+                <div class="left">
+                    <div class="bottom-left">
+                        <div class="col-md-6">
+                            <td>
+
+                                <img src="@Model.ürünresmi" style="width: 290px; height: 290px;" alt="...">
+                            </td>
+                        </div>
+                    </div>
+
+                    <div class="col-md-23">
+
+                        <p>Ürün Adı</p>
+                        <h4>@Model.ürünadi</h4>
+                        <hr />
+                        <p>Ürün Markası</p>
+                        <h4>@Model.markalar.markaad</h4>
+                        <hr />
+
+
+                        <p>Ürün Fiyatı  </p>
+
+                        <h4>@Model.fiyat  ₺</h4>
+
+
+                        <hr />
+
+
+
+                        <p class="product-quantity">Ürün Adeti: <input value="1" name=""</p>
+
+                        <a href="/Cart/EkleÜrün/@Model.ürünid" class="btn btn-default" role="button"><span1 class="fas fa-shopping-cart"></span1>Sepete Ekle</a>
+
+
+
+
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#home">Ürün Açıklaması</a></li>
+                          
+                            <li><a data-toggle="tab" href="#menu2">Taksit Seçeneklerimiz</a></li>
+                            <li><a data-toggle="tab" href="#menu3">Yorumlarınız</a></li>
+                        </ul>
+                        <div id="home" class="tab-pane fade in active">
+                      
+                            <p>     @Model.ürünözellikleri</p>
+                        </div>
+
+
+                            <div id="menu2" class="tab-pane fade">
+
+                                <img src="~/sitem/img/taksit.png">
+
+                            </div>
+
+                            <div id="menu3" class="tab-pane fade">
+                                <h3>Yorumlarınız</h3>
+                                Yorumlarınızı Bildirin Nasıl Buldunuz Bizleri ?
+                                <p> Öneri Ve Şikayetlerinizi İletişim Menüsüne Geçerek Bildirin. </p>
+                                <hr>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

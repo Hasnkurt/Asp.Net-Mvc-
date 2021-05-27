@@ -1,0 +1,56 @@
+﻿@using projeödevi.Models.Entity
+@model List<ürünler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        
+        <th>Ürün id</th>
+        <th>Ürün Resmi</th>
+        <th>Ürün Adi</th>
+        <th>Ürün Marka</th>
+        <th>Ürün Özellikleri</th>
+        <th>Ürün Kategori</th>
+        <th>Ürün Fiyati</th>
+        <th>Ürün Stok</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        
+    </tr>
+
+
+
+    <tbody>
+        @foreach (var urn in Model)
+        {
+        <tr>
+          
+            <td>@urn.ürünid</td>
+
+           
+            <td>
+               
+                <img src="@urn.ürünresmi"style="width="100" height="100" />
+            </td>
+
+
+            <td>@urn.ürünadi</td>   
+
+            <td>@urn.markalar.markaad</td>
+            <td>@urn.ürünözellikleri</td>
+            <td>@urn.kategori.kategoriad</td>
+            <td>@urn.fiyat</td>
+            <td>@urn.stok</td>
+            <td><a href="/adminürün/SIL/@urn.ürünid" class="btn btn-danger">SİL</a></td>
+            <td><a href="/adminürün/ÜrünGetir/@urn.ürünid" class="btn btn-success">GUNCELLE</a></td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="~/adminürün/ÜrünEkle" class="btn btn-primary">YENİ ÜRÜN EKLE</a>
+
+

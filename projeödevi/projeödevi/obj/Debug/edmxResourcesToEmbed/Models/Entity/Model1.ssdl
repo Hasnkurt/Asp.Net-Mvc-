@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eticaretModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="adminlogin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="sifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rol" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="kategori">
+    <Key>
+      <PropertyRef Name="kategoriid" />
+    </Key>
+    <Property Name="kategoriid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kategoriad" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kayitol">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adsoyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="ceptel" Type="nvarchar" MaxLength="50" />
+    <Property Name="eposta" Type="nvarchar" MaxLength="50" />
+    <Property Name="sifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="sifretekrari" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="markalar">
+    <Key>
+      <PropertyRef Name="markaid" />
+    </Key>
+    <Property Name="markaid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="markaad" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sepet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ürünid" Type="int" />
+    <Property Name="adet" Type="nvarchar" MaxLength="50" />
+    <Property Name="fiyat" Type="nvarchar" MaxLength="50" />
+    <Property Name="resim" Type="nvarchar" MaxLength="50" />
+    <Property Name="kullaniciid" Type="int" />
+  </EntityType>
+  <EntityType Name="sipariş">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="siparisno" Type="nvarchar" MaxLength="50" />
+    <Property Name="toplamtutar" Type="nvarchar" MaxLength="50" />
+    <Property Name="sipariştarihi" Type="nvarchar" MaxLength="50" />
+    <Property Name="kullaniciadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="sehir" Type="nvarchar" MaxLength="50" />
+    <Property Name="semt" Type="nvarchar" MaxLength="50" />
+    <Property Name="mahalle" Type="nvarchar" MaxLength="50" />
+    <Property Name="postakodu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sliderüst">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="slider" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="ürünler">
+    <Key>
+      <PropertyRef Name="ürünid" />
+    </Key>
+    <Property Name="ürünid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ürünadi" Type="varchar" MaxLength="50" />
+    <Property Name="ürünmarka" Type="int" />
+    <Property Name="ürünözellikleri" Type="varchar" MaxLength="50" />
+    <Property Name="ürünkategori" Type="int" />
+    <Property Name="fiyat" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="stok" Type="varchar" MaxLength="50" />
+    <Property Name="ürünresmi" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <Association Name="FK_ürünler_kategori">
+    <End Role="kategori" Type="Self.kategori" Multiplicity="0..1" />
+    <End Role="ürünler" Type="Self.ürünler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kategori">
+        <PropertyRef Name="kategoriid" />
+      </Principal>
+      <Dependent Role="ürünler">
+        <PropertyRef Name="ürünkategori" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ürünler_markalar">
+    <End Role="markalar" Type="Self.markalar" Multiplicity="0..1" />
+    <End Role="ürünler" Type="Self.ürünler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="markalar">
+        <PropertyRef Name="markaid" />
+      </Principal>
+      <Dependent Role="ürünler">
+        <PropertyRef Name="ürünmarka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="eticaretModelStoreContainer">
+    <EntitySet Name="adminlogin" EntityType="Self.adminlogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kategori" EntityType="Self.kategori" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kayitol" EntityType="Self.kayitol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="markalar" EntityType="Self.markalar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sepet" EntityType="Self.sepet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sipariş" EntityType="Self.sipariş" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sliderüst" EntityType="Self.sliderüst" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ürünler" EntityType="Self.ürünler" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ürünler_kategori" Association="Self.FK_ürünler_kategori">
+      <End Role="kategori" EntitySet="kategori" />
+      <End Role="ürünler" EntitySet="ürünler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ürünler_markalar" Association="Self.FK_ürünler_markalar">
+      <End Role="markalar" EntitySet="markalar" />
+      <End Role="ürünler" EntitySet="ürünler" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

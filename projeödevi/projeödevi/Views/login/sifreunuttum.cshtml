@@ -1,0 +1,93 @@
+﻿@model projeödevi.Models.Entity.adminlogin
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Şifremi Unuttum</title>
+    <link href="~/web/startbootstrap-sb-admin-gh-pages/dist/css/styles.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-dark">
+    <div id="layoutAuthentication">
+        <div id="layoutAuthentication_content">
+            <main>
+                @using (Html.BeginForm("Sifreunuttum", "login", FormMethod.Post))
+                {
+                    if (TempData["Basarisiz"] != null)
+                    {
+
+                        <div class="alert alert-success" role="alert">
+                            <i class="glyphicon glyphicon-thumbs-up"></i>@TempData["Basarisiz"]
+                        </div>
+                    }
+
+                    if (TempData["Basarili"] != null)
+                    {
+
+                        <div class="alert alert-success" role="alert">
+                            <i class="glyphicon glyphicon-thumbs-up"></i>@TempData["Basarili"]
+                        </div>
+                    }
+
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Şifre Kurtarma</h3></div>
+                                    <div class="card-body">
+                                        <div class="small mb-3 text-muted">E-posta adresinizi girin ve size Kullanıcı Adınız  şifrenizi göndereceğiz.</div>
+                                        <form>
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="inputEmailAddress">Email</label>
+                                                <input class="form-control py-4" id="inputEmailAddress" name="ad" aria-describedby="emailHelp" placeholder="Email Adresinizi Giriniz" />
+                                            </div>
+                                            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                                                <a class="small" href="~/login/Index">Giriş Ekranına Dön</a>
+                                                <button type="submit" class="btn btn-warning">Gönder</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <div class="small">
+                                            <a href="register.html">
+                                                Bir hesaba mı ihtiyacınız var? Kaydol!
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </main>
+        </div>
+        <div id="layoutAuthentication_footer">
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Hk Müzik Market &copy;  2021</div>
+                        <div>
+                            <a href="#">Gizlilik Politikası</a>
+                            &middot;
+                            <a href="#">Şartlar &amp; Koşullar</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="~/web/startbootstrap-sb-admin-gh-pages/dist/js/scripts.js"></script>
+</body>
+</html>

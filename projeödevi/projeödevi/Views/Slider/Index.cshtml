@@ -1,0 +1,40 @@
+﻿@using projeödevi.Models.Entity
+@model List<sliderüst>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>Slider ID</th>
+        <th>Slider Resmi</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+    @foreach (var sld in Model)
+    {
+        <tr>
+            <td>@sld.id</td>
+
+            <td>
+
+                <img src="@sld.slider" style="width=" 100" height="100" />
+            </td>
+
+
+     
+            <td><a href="/slider/SIL/@sld.id" class="btn btn-danger">SİL</a></td>
+            <td><a href="/slider/SliderGetir/@sld.id" class="btn btn-success">GÜNCELLE</a></td>
+        </tr>
+    }
+    </tbody>
+
+</table>
+<a href="~/Slider/Slider" class="btn btn-primary">Yeni Resim Ekle</a>
+

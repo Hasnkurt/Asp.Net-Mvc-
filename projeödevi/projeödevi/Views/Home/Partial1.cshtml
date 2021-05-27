@@ -1,0 +1,43 @@
+﻿@using projeödevi.Models.Entity
+@model List<kategori>
+    <style>
+      
+          
+    
+    </style>
+    
+    <div class="list-group-horizontal-lg">
+
+        <div class="list-group-item active " style="background-color:black; text-align:center;">
+            <p>KATEGORİLER</p>
+                
+        </div>
+      
+
+
+        @foreach (var modl in Model)
+        {
+
+
+
+            <a href="/Home/ürünlistesi/@modl.kategoriid" class="list-group-item"> @modl.kategoriad★<span class="badge"> @modl.ürünler.Count </span></a>
+
+
+
+
+
+
+        }
+
+
+
+    </div>
+     
+
+
+
+
+
+
+
+

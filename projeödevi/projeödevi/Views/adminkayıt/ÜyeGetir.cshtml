@@ -1,0 +1,36 @@
+﻿@model projeödevi.Models.Entity.adminlogin
+@{
+    ViewBag.Title = "ÜyeGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "adminkayıt", FormMethod.Post))
+{
+
+<div class="form-group">
+    @Html.LabelFor(m => m.id)
+    @Html.TextBoxFor(m => m.id, new { @class = "form-control" })
+
+
+    @Html.LabelFor(m => m.ad)
+    @Html.TextBoxFor(m => m.ad, new { @class = "form-control" })
+
+    @Html.LabelFor(m => m.Rol)
+    @Html.TextBoxFor(m => m.Rol, new { @class = "form-control" })
+
+
+    @Html.LabelFor(m => m.sifre)
+    @Html.TextBoxFor(m => m.sifre, new { @class = "form-control" })
+
+
+
+
+</div>
+
+
+
+    <div>
+        <button class="btn btn-warning">GÜNCELLE</button>
+    </div>
+}
+

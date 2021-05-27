@@ -1,0 +1,34 @@
+﻿@model projeödevi.Models.Entity.sliderüst
+@{
+    ViewBag.Title = "SliderGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("GUNCELLE", "Slider", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="form-group">
+
+
+
+
+
+        @Html.LabelFor(m => m.id)
+        @Html.TextBoxFor(m => m.id, new { @class = "form-control" })
+
+        <br />
+
+        @Html.LabelFor(m => m.slider)
+        @Html.TextBoxFor(m => m.slider, new { @class = "form-control" })
+        <input type="file" name="slider" />
+
+        <br />
+
+
+
+    </div>
+
+    <div>
+        <button class="btn btn-warning">Ürün Güncelle</button>
+    </div>
+}

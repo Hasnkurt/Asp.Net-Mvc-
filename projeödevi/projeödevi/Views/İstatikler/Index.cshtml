@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row row-deck">
+    <div class="col-sm-6 col-xl-3">
+        <div class="block block-rounded text-center d-flex flex-column">
+            <div class="block-content block-content-full flex-grow-1">
+                <div class="item rounded-lg bg-body-dark mx-auto my-3">
+                    <i class="fa fa-users text-muted"></i>
+                </div>
+                <div class="text-black font-size-h1 font-w700">@ViewBag.d4</div>
+                <div class="text-muted mb-3">Kayıtlı kullanıcılar</div>
+
+            </div>
+            <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
+                <a class="font-w500" href="/üye/ÜyeList">
+                    Tüm Kullanıcıları Görünteleyin
+                    <i class="fa fa-arrow-right ml-1 opacity-25"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-xl-3">
+        <div class="block block-rounded text-center d-flex flex-column">
+            <div class="block-content block-content-full flex-grow-1">
+                <div class="item rounded-lg bg-body-dark mx-auto my-3">
+                    <div class="sb-nav-link-icon"><i class=" fas fa-flask text-muted"></i></div>
+                </div>
+                <div class="text-black font-size-h1 font-w700">@ViewBag.d2</div>
+                <div class="text-muted mb-3">Kayıtlı Ürünler</div>
+
+            </div>
+            <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
+                <a class="font-w500" href="/Adminürün/Index">
+                    Tüm Ürünleri Görünteleyin
+                    <i class="fa fa-arrow-right ml-1 opacity-25"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-sm-6 col-xl-3">
+        <div class="block block-rounded text-center d-flex flex-column">
+            <div class="block-content block-content-full flex-grow-1">
+                <div class="item rounded-lg bg-body-dark mx-auto my-3">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt text-muted"></i></div>
+
+                </div>
+                <div class="text-black font-size-h1 font-w700">@ViewBag.d1</div>
+                <div class="text-muted mb-3">Kayıtlı Kategori</div>
+
+            </div>
+            <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
+                <a class="font-w500" href="/Admin/Kategori">
+                    Tüm Kategori Görünteleyin
+                    <i class="fa fa-arrow-right ml-1 opacity-25"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="block block-rounded text-center d-flex flex-column">
+            <div class="block-content block-content-full flex-grow-1">
+                <div class="item rounded-lg bg-body-dark mx-auto my-3">
+                    <div class="sb-nav-link-icon"><i class=" fas fa-flask text-muted"></i></div>
+                </div>
+                <div class="text-black font-size-h1 font-w700">@ViewBag.d3</div>
+                <div class="text-muted mb-3">Kayıtlı Markalar</div>
+
+            </div>
+            <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
+                <a class="font-w500" href="/Marka/Index">
+                    Tüm Markaları Görünteleyin
+                    <i class="fa fa-arrow-right ml-1 opacity-25"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+</div>

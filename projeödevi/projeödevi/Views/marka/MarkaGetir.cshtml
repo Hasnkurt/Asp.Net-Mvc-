@@ -1,0 +1,21 @@
+﻿@model projeödevi.Models.Entity.markalar
+@{
+    ViewBag.Title = "MarkaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+    @using (Html.BeginForm("Guncelle","marka",FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m=>m.markaid)
+                    @Html.TextBoxFor(m => m.markaid, new { @class ="form-control"})
+
+                  
+                    @Html.LabelFor(m=>m.markaad)
+                    @Html.TextBoxFor(m => m.markaad, new { @class="form-control"})
+
+                </div>
+                <div>
+                    <button class="btn btn-warning">Marka Güncelle</button>
+                </div>
+            }

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eticaretModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="adminlogin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Rol" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="kategori">
+    <Key>
+      <PropertyRef Name="kategoriid" />
+    </Key>
+    <Property Name="kategoriid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kategoriad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ürünler" Relationship="Self.FK_ürünler_kategori" FromRole="kategori" ToRole="ürünler" />
+  </EntityType>
+  <EntityType Name="kayitol">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adsoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ceptel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="eposta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sifretekrari" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="markalar">
+    <Key>
+      <PropertyRef Name="markaid" />
+    </Key>
+    <Property Name="markaid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="markaad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ürünler" Relationship="Self.FK_ürünler_markalar" FromRole="markalar" ToRole="ürünler" />
+  </EntityType>
+  <EntityType Name="sepet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ürünid" Type="Int32" />
+    <Property Name="adet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fiyat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="resim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kullaniciid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sipariş">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="siparisno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="toplamtutar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sipariştarihi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kullaniciadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sehir" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="semt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mahalle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="postakodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sliderüst">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="slider" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ürünler">
+    <Key>
+      <PropertyRef Name="ürünid" />
+    </Key>
+    <Property Name="ürünid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ürünadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ürünmarka" Type="Int32" />
+    <Property Name="ürünözellikleri" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ürünkategori" Type="Int32" />
+    <Property Name="fiyat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="stok" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ürünresmi" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="kategori" Relationship="Self.FK_ürünler_kategori" FromRole="ürünler" ToRole="kategori" />
+    <NavigationProperty Name="markalar" Relationship="Self.FK_ürünler_markalar" FromRole="ürünler" ToRole="markalar" />
+  </EntityType>
+  <Association Name="FK_ürünler_kategori">
+    <End Role="kategori" Type="Self.kategori" Multiplicity="0..1" />
+    <End Role="ürünler" Type="Self.ürünler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kategori">
+        <PropertyRef Name="kategoriid" />
+      </Principal>
+      <Dependent Role="ürünler">
+        <PropertyRef Name="ürünkategori" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ürünler_markalar">
+    <End Role="markalar" Type="Self.markalar" Multiplicity="0..1" />
+    <End Role="ürünler" Type="Self.ürünler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="markalar">
+        <PropertyRef Name="markaid" />
+      </Principal>
+      <Dependent Role="ürünler">
+        <PropertyRef Name="ürünmarka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="eticaretEntities5" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="adminlogin" EntityType="Self.adminlogin" />
+    <EntitySet Name="kategori" EntityType="Self.kategori" />
+    <EntitySet Name="kayitol" EntityType="Self.kayitol" />
+    <EntitySet Name="markalar" EntityType="Self.markalar" />
+    <EntitySet Name="sepet" EntityType="Self.sepet" />
+    <EntitySet Name="sipariş" EntityType="Self.sipariş" />
+    <EntitySet Name="sliderüst" EntityType="Self.sliderüst" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="ürünler" EntityType="Self.ürünler" />
+    <AssociationSet Name="FK_ürünler_kategori" Association="Self.FK_ürünler_kategori">
+      <End Role="kategori" EntitySet="kategori" />
+      <End Role="ürünler" EntitySet="ürünler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ürünler_markalar" Association="Self.FK_ürünler_markalar">
+      <End Role="markalar" EntitySet="markalar" />
+      <End Role="ürünler" EntitySet="ürünler" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
